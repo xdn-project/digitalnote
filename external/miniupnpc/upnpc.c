@@ -112,7 +112,7 @@ static void ListRedirections(struct UPNPUrls * urls,
                              struct IGDdatas * data)
 {
 	int r;
-	int i = 0;
+	unsigned int i = 0;
 	char index[6];
 	char intClient[40];
 	char intPort[6];
