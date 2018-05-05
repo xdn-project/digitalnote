@@ -46,10 +46,10 @@ namespace Crypto {
     chacha(4, data, length, reinterpret_cast<const uint8_t*>(&key), reinterpret_cast<const uint8_t*>(&iv), cipher);
   }
 
-  inline void generate_chacha8_key(Crypto::cn_context &context, const std::string& password, chacha_key& key) {
+  inline void generate_chacha8_key(Crypto::cn_context &context, const std::string& password, chacha_key& key, int cn_variant = 0) {
     static_assert(sizeof(chacha_key) <= sizeof(Hash), "Size of hash must be at least that of chacha_key");
     Hash pwd_hash;
-    cn_slow_hash(context, password.data(), password.size(), pwd_hash);
+    cn_slow_hash(context, password.data(), password.size(), pwd_hash, cn_variant);
     memcpy(&key, &pwd_hash, sizeof(key));
     memset(&pwd_hash, 0, sizeof(pwd_hash));
   }
