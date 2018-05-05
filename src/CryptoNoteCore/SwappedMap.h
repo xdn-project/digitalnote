@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <string>
 #include <vector>
+#include <iostream>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
 
